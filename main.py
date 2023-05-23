@@ -4,8 +4,11 @@ import webbrowser
 import os
 from datetime import datetime
 import openai
+import requests
+import json
 
-openai.api_key = ("API_KEY")
+openai.api_key = "API_KEY"
+wheather_api = "API_KEY"
 speech = win32com.client.Dispatch("SAPI.SpVoice")
 now = datetime.now()
 
@@ -74,6 +77,15 @@ while True:
         website = (f"https://www.youtube.com/results?search_query={link_text}")
         webbrowser.open(website)
         say(f"watch {rep_text}")
+
+    if "weather" in query.lower():
+        city = query.split("in ", 1)[1]
+        url = f"https://api.weatherapi.com/v1/current.json?key={wheather_api}&q={city}"
+
+        r = requests.get(url)
+        weather = json.loads(r.text)
+        temperature = (weather["current"]["temp_c"])
+        say(f"The current weather in {city} is {temperature} degrees")
 
     gpt(tprompt=f"User: {query.lower()}\n AutoGPT: ")
     
