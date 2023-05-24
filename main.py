@@ -31,6 +31,7 @@ def takeCommand():
     reco = sr.Recognizer()
     with sr.Microphone() as source:
         reco.pause_threshold = 0.8
+        reco.energy_threshold = 1000
         audio = reco.listen(source)
         try:
             query = reco.recognize_google(audio, language = "en-in")
