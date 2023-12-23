@@ -1,4 +1,4 @@
-# Auto-GPT
+# Auto-GPT 🤖
 
 This is a virtual assistant powered by OpenAI's GPT-3 API. It can understand voice commands using speech recognition and respond via text-to-speech.
 
