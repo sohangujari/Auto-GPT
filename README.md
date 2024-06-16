@@ -1,4 +1,4 @@
-<summary>⚠️ Note: Currently, this code will work only on Windows</summary>
+**⚠️ Note:** Currently, this code will work only on Windows.
 
 # Auto-GPT 🤖
 
