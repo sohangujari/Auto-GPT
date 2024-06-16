@@ -1,4 +1,4 @@
-<summary style="background-color: #ffed4a; color: #333; font-weight: bold; padding: 10px; border-radius: 8px;">⚠️ Note: Currently, this code will work only on Windows</summary>
+<summary>⚠️ Note: Currently, this code will work only on Windows</summary>
 
 # Auto-GPT 🤖
 
