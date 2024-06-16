@@ -1,5 +1,5 @@
 import speech_recognition as sr
-import win32com.client
+import pyttsx3
 import webbrowser
 import os
 from datetime import datetime
@@ -9,11 +9,15 @@ import json
 
 openai.api_key = "API_KEY"
 wheather_api = "API_KEY"
-speech = win32com.client.Dispatch("SAPI.SpVoice")
+speech = pyttsx3.init()
 now = datetime.now()
 
+speech.setProperty('rate', 150)    # Speed of speech
+speech.setProperty('volume', 1.0)  # Volume (0.0 to 1.0)
+
 def say(text):
-    speech.Speak(text)
+    speech.say(text)
+    speech.runAndWait()
 
 def gpt(tprompt):
     response = openai.Completion.create(

@@ -1,4 +1,4 @@
 SpeechRecognition
 openai
-pywin32
+pyttsx3
 requests
