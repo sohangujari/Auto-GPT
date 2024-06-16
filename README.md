@@ -1,3 +1,5 @@
+<summary style="background-color: #ffed4a; color: #333; font-weight: bold; padding: 10px; border-radius: 8px;">⚠️ Note: Currently, this code will work only on Windows</summary>
+
 # Auto-GPT 🤖
 
 This is a virtual assistant powered by OpenAI's GPT-3 API. It can understand voice commands using speech recognition and respond via text-to-speech.
