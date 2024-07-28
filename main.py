@@ -36,12 +36,20 @@ def takeCommand():
     with sr.Microphone() as source:
         reco.pause_threshold = 0.8
         reco.energy_threshold = 1000
+        print("Listening...")
         audio = reco.listen(source)
         try:
-            query = reco.recognize_google(audio, language = "en-in")
+            query = reco.recognize_google(audio, language="en-in")
             print(f"User: {query}")
             return query
+        except sr.UnknownValueError:
+            print("Google Speech Recognition could not understand the audio")
+            return "I didn't catch that. Could you please repeat?"
+        except sr.RequestError as e:
+            print(f"Could not request results from Google Speech Recognition service; {e}")
+            return "Some error occurred. Sorry from AutoGPT"
         except Exception as e:
+            print(f"An error occurred: {e}")
             return "Some error occurred. Sorry from AutoGPT"
 
 say("Hello, I'm AutoGPT")
@@ -60,13 +68,13 @@ while True:
             webbrowser.open(site[1])
             say(f"Opening {site[0].capitalize()}...")
 
-    if "play song" in query.lower():
-        os.startfile("D:\Calm Down.mp3")
-        say("Playing Song...")
+    # if "play song" in query.lower():
+    #     os.startfile("D:\Calm Down.mp3")
+    #     say("Playing Song...")
 
-    if "open photoshop" in query.lower():
-        os.startfile("C:\Program Files\Adobe\Adobe Photoshop CC 2019\Photoshop.exe")
-        say("Opening Photoshop...")
+    # if "open photoshop" in query.lower():
+    #     os.startfile("C:\Program Files\Adobe\Adobe Photoshop CC 2019\Photoshop.exe")
+    #     say("Opening Photoshop...")
 
     if "the time" in query.lower():
         time = now.strftime("%I")

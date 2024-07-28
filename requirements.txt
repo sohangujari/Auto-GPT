@@ -1,0 +1,9 @@
+SpeechRecognition
+openai
+pyttsx3
+requests
+# pyaudio
+
+
+# pip install google-cloud-speech
+# pip install gTTS
