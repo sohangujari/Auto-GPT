@@ -1,4 +1,0 @@
-SpeechRecognition
-openai
-pyttsx3
-requests
