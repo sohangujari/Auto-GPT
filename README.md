@@ -9,7 +9,7 @@ This is a virtual assistant powered by OpenAI's GPT-3 API. It can understand voi
 The main.py file contains the core logic for Auto-GPT. It uses the following key libraries:
 
 - SpeechRecognition - for speech-to-text 
-- PyWin32 - for text-to-speech
+- Pyttsx3 - for text-to-speech
 - OpenAI - for generating responses with GPT-3
 - Requests - for weather API calls
 

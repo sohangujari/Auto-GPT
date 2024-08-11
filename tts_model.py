@@ -1,22 +1,13 @@
-# import pyttsx3
-# engine = pyttsx3.init()
-# engine.say("Hello world")
-# engine.runAndWait()
-from gtts import gTTS
-import os
+import pyttsx3
 
-# # Text to be converted to speech
-# text = "Hello, how are you today?"
+engine = pyttsx3.init()
 
-# # Language in which you want to convert
-# language = 'en'
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[0].id)
 
-# # Passing the text and language to the engine, here we have marked slow=False.
-# # Which tells the module that the converted audio should have a high speed
-# speech = gTTS(text=text, lang=language, slow=False)
+engine.setProperty('rate', 150)
+engine.setProperty('volume', 0.9)
 
-# # Saving the converted audio in a mp3 file named "speech.mp3"
-# speech.save("speech.mp3")
+engine.say("Hello world")
 
-# # Playing the converted file
-# os.system("start speech.mp3")  # Use "afplay speech.mp3" on macOS or "mpg321 speech.mp3" on Linux
+engine.runAndWait()

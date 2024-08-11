@@ -1,2 +1,2 @@
-gemini_api = "AIzaSyAvRPVglMlG_yBhFGxSrUTkQ_jfOSlnAGo"
+gemini_api = ""
 openai_api = ""
